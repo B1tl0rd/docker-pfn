@@ -1,0 +1,15 @@
+sudo: required
+
+env:
+  global:
+    - DOCKER_VERSION=1.9.1 # Install Docker version 1.9.1
+
+services:
+  - docker
+
+script:
+  - docker build -t zokeber/docker-pfn:latest .
+  - docker create --privileged -it -p 8181:80 --name php7-fpm-nginx -h php7-fpm-nginx zokeber/docker-pfn
+  - docker start php7-fpm-nginx
+  - docker stop php7-fpm-nginx
+  - docker rm -f php7-fpm-nginx
