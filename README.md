@@ -2,7 +2,7 @@
 
 This repository contains a Dockerfile to build a Docker Image with PHP 7.x + PHP-FPM + Nginx compiled from the sources.
 
-[![Build Status](https://travis-ci.org/zokeber/docker-pfn.svg?branch=master)](https://travis-ci.org/zokeber/docker-pfn [![](https://images.microbadger.com/badges/image/zokeber/docker-pfn.svg)](http://microbadger.com/images/zokeber/docker-pfn "Get your own image badge on microbadger.com")
+[![Build Status](https://travis-ci.org/zokeber/docker-pfn.svg?branch=master)](https://travis-ci.org/zokeber/docker-pfn)
 
 ## Base Docker Image
 
