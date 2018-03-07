@@ -27,12 +27,10 @@ RUN yum update -y && \
 	yum upgrade -y && \
 	yum clean all
 
-# Enviorement Variable
+# Environments Variable
 ARG NGINX
 ARG PHP
 ARG DOMAIN
-
-# Enviorenments Variable
 ENV VIRTUALHOST=$DOMAIN
 ENV DIR_VIRTUALHOST=/var/www/html
 ENV PATH_COMPILE=/opt
