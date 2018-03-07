@@ -10,7 +10,6 @@ This repository contains a Dockerfile to build a Docker Image with PHP 7.x + PHP
 
 ## Usage
 
-
 ### Installation
 
 1. Install [Docker](https://www.docker.com/).
@@ -35,4 +34,4 @@ docker start php7-fpm-nginx
 
 ### Connection methods:
 
-`docker exec -it mongodb bash`
+`docker exec -it php7-fpm-nginx bash`
