@@ -43,7 +43,7 @@ ENV NGINX_TMP=/opt/nginx
 
 # Install packages for compile php and nginx
 RUN yum update -y && \
-    yum install tar net-tools bzip2 hostname rsyslog gc gcc gcc-c++ pcre-devel zlib-devel make wget openssl-devel libxml2-devel libxslt-devel gd-devel perl-ExtUtils-Embed GeoIP-devel gperftools gperftools-devel libatomic_ops-devel perl-ExtUtils-Embed cryptsetup-devel cryptsetup unzip git libxml2-devel pkgconfig openssl-devel bzip2-devel curl-devel libpng-devel libjpeg-devel libXpm-devel freetype-devel gmp-devel libmcrypt-devel mariadb-devel aspell-devel recode-devel libpqxx-devel autoconf bison
+    yum install tar net-tools bzip2 hostname rsyslog gc gcc gcc-c++ pcre-devel zlib-devel make wget openssl-devel libxml2-devel libxslt-devel gd-devel perl-ExtUtils-Embed GeoIP-devel gperftools gperftools-devel libatomic_ops-devel perl-ExtUtils-Embed cryptsetup-devel cryptsetup unzip git libxml2-devel pkgconfig openssl-devel bzip2-devel curl-devel libpng-devel libjpeg-devel libXpm-devel freetype-devel gmp-devel libmcrypt-devel mariadb-devel aspell-devel recode-devel libpqxx-devel autoconf bison \
     re2c libicu-devel libwebp-devel libc-client-devel libpng12-devel libxslt-devel libssh2-devel libssh2 -y
 
 # Install NGINX
