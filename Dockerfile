@@ -47,12 +47,12 @@ RUN yum update -y && \
     re2c libicu-devel libwebp-devel libc-client-devel libpng12-devel libxslt-devel libssh2-devel libssh2 -y
 
 # Install NGINX
-RUN mkdir -p "${NGINX_TMP}" && \
-    cd "${NGINX_TMP}" && \
+RUN mkdir -p "$NGINX_TMP" && \
+    cd "$NGINX_TMP" && \
     wget -c http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz && \
     tar xzf nginx-$NGINX_VERSION.tar.gz && \
     useradd -s /bin/false $USER_NGINX && \
-    cd "${NGINX_TMP}"/nginx-$NGINX_VERSION && \
+    cd "$NGINX_TMP"/nginx-$NGINX_VERSION && \
     bash configure --prefix=/usr --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx/nginx.pid --user=$USER_NGINX --group=$USER_NGINX --with-ipv6 --with-http_v2_module --with-http_addition_module --with-http_dav_module --with-http_geoip_module --with-http_gzip_static_module --with-http_image_filter_module --with-http_realip_module --with-http_stub_status_module --with-http_ssl_module --with-http_sub_module --with-http_xslt_module --with-select_module --with-poll_module --with-file-aio --with-http_realip_module --with-http_addition_module --with-http_xslt_module --with-http_image_filter_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_stub_status_module --with-http_perl_module --with-mail --with-mail_ssl_module --with-cpp_test_module --with-cpu-opt=CPU --with-pcre --with-pcre-jit --with-md5-asm --with-sha1-asm --with-zlib-asm=CPU --with-libatomic --with-debug --with-ld-opt="-Wl,-E" && \
     make && \
     make install && \
