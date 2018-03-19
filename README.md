@@ -14,7 +14,7 @@ This repository contains a Dockerfile to build a Docker Image with PHP 7.x + PHP
 
 1. Install [Docker](https://www.docker.com/).
 
-2. To create the image zokeber/docker-pfn, clone this repository and execute the following command on the docker-pfn folder:
+2. To create the image zokeber/docker-pfn, clone this repository, replace variables for you preference and execute the following command on the docker-pfn folder:
 
 `docker build --build-arg DOMAIN=app.domain.com --build-arg NGINX=1.10.3 --build-arg PHP=7.0.17 -t zokeber/pfn:latest .`
 
