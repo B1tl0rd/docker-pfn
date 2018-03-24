@@ -56,8 +56,11 @@ start_phpfpm()
         sed -i "s|php_admin_value[error_log] =.*|;php_admin_value[error_log] =|" $i
     done
 
-    # 5. Send error to a file
-    ln -sf /dev/stderr /var/log/php-fpm.error.log
+
+    # 5. Sending log file error/access to /dev/stderr and /dev/stdout
+    ln -sf /dev/stderr /var/log/php-fpm/error.log
+    ln -sf /dev/stdout /var/log/php-fpm/access.log
+    ln -sf /dev/stdout /var/log/php-fpm/slow.log
 
     # 6. Run PHP-FPM
     DAEMON="php-fpm"
@@ -77,6 +80,10 @@ start_nginx()
             #sed -i "s|    root ${DIR_VIRTUALHOST};|    root ${DIR_VIRTUALHOST}|" /etc/nginx/conf.d/default.conf
         fi
     fi
+
+    # Sending log file error/access to /dev/stderr and /dev/stdout
+    ln -sf /dev/stdout /var/log/nginx/access.log
+    ln -sf /dev/stderr /var/log/nginx/error.log
 
     # Run Nginx
     DAEMON="nginx"
