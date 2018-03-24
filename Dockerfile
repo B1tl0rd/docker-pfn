@@ -28,9 +28,9 @@ RUN yum update -y && \
 	yum clean all
 
 # Environments Variable
-ARG NGINX
-ARG PHP
-ARG DOMAIN
+ARG NGINX=1.10.3
+ARG PHP=7.0.17
+ARG DOMAIN=domain.com
 ENV VIRTUALHOST=$DOMAIN
 ENV DIR_VIRTUALHOST=/var/www/html
 ENV PATH_COMPILE=/opt
