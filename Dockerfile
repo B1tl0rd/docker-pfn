@@ -86,8 +86,7 @@ COPY conf/default.conf /etc/nginx/conf.d/
 COPY conf/start.sh /usr/local/bin/start.sh
 
 # Copy yours project and information about php version
-COPY project/index.html $DIR_VIRTUALHOST/
-COPY project/info.php $DIR_VIRTUALHOST/
+COPY project/* $DIR_VIRTUALHOST/
 
 # Volumes and work directory
 VOLUME ["/var/log", "/etc", "$DIR_VIRTUALHOST"]
